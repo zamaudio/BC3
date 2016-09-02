@@ -1,0 +1,1 @@
+function dbval = dB(x)% function dbval = dB(x)% computes dB value from a (real or complex) amplitude value%dbval = 20*log10(abs(x));

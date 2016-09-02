@@ -1,0 +1,1 @@
+function [coeffs,ind,dx] = lgint1(x)% function [coeffs,ind,dx] = lgint1(x)% Lagrange interpolation 1st orderind = floor(x);dx = x-ind;coeffs = [1-dx,dx];

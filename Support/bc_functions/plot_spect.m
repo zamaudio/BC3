@@ -1,0 +1,1 @@
+function [] = plot_spect(sig,srate,plotcode)% function [] = plot_spect(sig,srate,plotcode)% plots spectrum of sig% srate = sampling rate%%global S_RATEif nargin < 3 plotcode = 'r'; endif nargin < 2 srate = S_RATE; end[sp,dfreq] = spect(sig,srate);len = length(sp);frq = linspace(0,dfreq*(len-1),len);plot(frq,sp,plotcode); zoom on;

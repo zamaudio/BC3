@@ -1,0 +1,1 @@
+function [] = plot_logspect(sig,srate,plotcode)% function [] = plot_logspect(sig,srate)% plots logaritmic frequency scale spectrum of sig% srate = sampling rate (required)% plocode is (optional) code of plot options%if nargin < 3 plotcode = 'r'; end[sp,dfreq] = spect(sig,srate);len = length(sp);frq = linspace(0,dfreq*(len-1),len);semilogx(frq,sp,plotcode); zoom on;

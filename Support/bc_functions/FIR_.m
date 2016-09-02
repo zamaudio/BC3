@@ -1,0 +1,1 @@
+function [out,struct] = FIR_(in,struct)%st = struct.state;ssiz = struct.ssize;dsiz = struct.dsize;offs = struct.offset;cs = struct.coeffs;if (offs<=1)	st(dsiz+1:ssiz+dsiz) = st(1:ssiz);	offs = dsiz+1;endst(offs) = in;out = st(offs:offs+ssiz-1)'*cs;struct.state = st;struct.offs = offs-1;

@@ -1,0 +1,1 @@
+function [coeffs,ind,dx] = lgint3(x)% function [coeffs,ind,dx] = lgint3(x)% Lagrange interpolation 3st orderind = floor(x-1);dx = x-ind;dx0 = dx;dx1 = dx0-1;dx2 = dx0-2;dx3 = dx0-3;h0 = -0.16666666666667*dx1*dx2*dx3;h1 = 0.5*dx0*dx2*dx3;h2 = -0.5*dx0*dx1*dx3;h3 = 0.16666666666667*dx0*dx1*dx2;coeffs = [h0;h1;h2;h3];

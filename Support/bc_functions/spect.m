@@ -1,0 +1,1 @@
+function [spectr,dfreq] = spect(sig,srate)% function [spectr,dfreq] = spect(sig,srate)% computes spectrum of sig% spectr = dB/scaled spectrum% dfreq = frequency step (Hz) between bins%len = length(sig);siz = floor(len/2);spectr = abs(fft(sig));spectr = 20*log10(spectr(1:siz));dfreq = srate/len;

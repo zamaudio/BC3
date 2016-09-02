@@ -1,0 +1,1 @@
+function [] = plot_sig(sig,srate,plotcode)% function [] = plot_sig(sig,beg,srate,plotcode)% plots signal sig% srate = sampling rate%if nargin < 3 plotcode = 'r'; endbeg = 0;sig = sig(:);siz = length(sig);xs = linspace(beg/srate,(beg+siz-1)/srate,siz);plot(xs,sig,plotcode); zoom on;
