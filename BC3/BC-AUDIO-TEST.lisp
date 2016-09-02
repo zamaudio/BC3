@@ -95,7 +95,7 @@
 (run-patch so)
 (stop-patch so)
 (c-code so)
-(step-patch-n so 1000000 t)
+(step-patch-n so 10000000 t)
 
 (run-patch sb)
 (stop-patch sb)
@@ -110,7 +110,18 @@
 
 (%get-double-float ptr)
 
-(.rtable 
+ (defpatch so ((so (.sin-osc :freq 800.0 :ampl 0.9))
+              (da (.probe "out")))
+   (-> so (inputs da)))
+
+(load-patch so)
+
+(step-patch so)
+
+(describe (elt (pa_devices) 2))
+
+(describe (elt (pa_devices) 0))
+(describe (indev (elt (pa_devices) 0)))
 |#
 
 
