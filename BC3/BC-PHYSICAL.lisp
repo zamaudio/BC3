@@ -2075,6 +2075,4 @@
   (declare (ignore rest))
   (error "Energy not available in ~a" b))
 
-; -----
-
 (provide :BC-physical)

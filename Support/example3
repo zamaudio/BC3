@@ -1,0 +1,17 @@
+(load "BC-LOAD.lisp")
+(in-package :BC)
+
+(defparameter pat
+  (patch ((c (.c 0.01 :name 'r))
+          (l (.l 0.01 :name 'l))
+          (e (.e 1.0 0.1)))
+    (.root (.diodenl :direction '+) (.ser e c l))
+    (-> (.across l) (.probe "out"))))
+
+(matlab-response pat
+		:samples 96000
+		:outputs '("out")
+		:post "
+plot(out_resp); grid on;
+")
+

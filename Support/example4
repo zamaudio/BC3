@@ -1,0 +1,6 @@
+(load "BC-LOAD.lisp")
+(in-package :BC)
+
+(inspect (.sum))
+
+

@@ -1,0 +1,5 @@
+There is a 6-string realtime guitar synthesizer with slider controls for parameters available in this distribution. Instructions to run the guitar synth are: After loading the BC3LW, open guitar-data.lisp and evaluate the buffer, then open BC-guitar.lisp and evaluate the buffer. Finally you may select by mouse any of the models starting by (defpatch strs... ) Evaluate the selected region and it should bring up a window to start and play the guitar patch. 
+
+If there is latency from the pluck to sound, it is because of your sound driver (on my PC laptop it is quite disturbing, but on my Mac not noticeable). 
+
+MK

@@ -1,0 +1,32 @@
+BlockCompiler3 (BC3)
+====================
+
+This copy of BC3 includes the changes from both of Matti's releases from 2008
+and I modified the configuration to work with GNU/Linux.
+
+Nothing has been altered significantly other than the realtime audio processing
+has been removed (it only worked in MacOSX and Windows I think) and the config
+has been changed for easy interoperation with GNU CLISP and GNU GCC.
+
+Make sure you install GNU toolchain and GNU CLISP.
+
+Go into Support directory and run the following command to compile
+the lisp part into a package:
+
+	clisp BC-COMPILE.lisp
+
+Now you can run the example for direct C code DSP output:
+
+	clisp example
+
+
+Licence
+=======
+
+GPL v3
+
+
+Original Author
+===============
+
+Matti Karjalainen

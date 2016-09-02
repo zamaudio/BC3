@@ -6,25 +6,25 @@
 (defparameter *WINCdemos* "ccl:BC3WINpackage;BC3WINCL;")
 
 (defparameter *WINCL-files*
-  '(BC-arrmath
-    BC-basics
-    BC-math
+  '(BC-ARRMATH
+    BC-BASICS
+    BC-MATH
     BC-WINCL
   ;  BC-MCL
   ;  BC-LW
-    BC-system
-    BC-audio
-    BC-elemfun
+    BC-SYSTEM
+;    BC-audio
+    BC-ELEMFUN
     BC-DSP
-    BC-filters
-    BC-Physical
-    BC-immit
-    BC-circuit
-    BC-xducer
-    WINCL-files
-    BC-audio-test
-    BC-circuit-tests
-    BC-elemfun-tests
+    BC-FILTERS
+    BC-PHYSICAL
+    BC-IMMIT
+    BC-CIRCUIT
+    BC-XDUCER
+    WINCL-FILES
+ ;   BC-audio-test
+    BC-CIRCUIT-TESTS
+    BC-ELEMFUN-TESTS
     ))
 
 (defparameter *WINCL-directories*

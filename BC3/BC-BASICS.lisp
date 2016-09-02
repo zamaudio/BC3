@@ -8,7 +8,7 @@
 (eval-when (eval compile load)
   (defparameter *current-patch* nil)
   (defparameter *patches* nil)
-  (defparameter *srate* 44100.0d0)
+  (defparameter *srate* 48000.0d0)
   (defparameter *default-type* '.double)
   )
 
