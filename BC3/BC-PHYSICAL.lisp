@@ -2075,4 +2075,36 @@
   (declare (ignore rest))
   (error "Energy not available in ~a" b))
 
+
+; ----- NON-LINEAR elements: DZ 2016-09-01
+
+;;; Diodenl
+
+(defclass .diodenl (root-block)
+  ((direction :initarg :direction :accessor direction))
+  (:default-initargs
+    :direction '+))
+
+(defmethod initialize-macro-block ((b .diodenl) &key
+                                       port-name)
+  (let* ((pb (make-instance '.w-port-block :port-type 'w-port))
+         (p (port pb))
+         (vt (.var 2.585e+1))  ;;; thermal voltage at room temperature
+         (iis (.var 1.0e-9))   ;;; reverse saturation current at room temp
+         (one (.const 1.0e+0))
+         (vd (.add (output pb) (input pb))) ;;; add ports to get V
+         (div (.div vd vt))
+         (exxp (.exp div))
+         (sub (.sub exxp one))
+         (mul (.mul iis sub))
+        )
+    (setf (domain p) (domain b))
+    (setf (ports b) (list p)
+          (name b) port-name)
+    (-> (output pb) (input pb))))
+
+(defun .diodenl (&rest rest)
+  (declare (dynamic-extent rest))
+  (apply #'make-instance '.diodenl rest))
+
 (provide :BC-physical)
